@@ -1,5 +1,8 @@
+# Import sqlite lib
 import sqlite3 as sql
 from sqlite3 import Error
+
+# Include helpers
 from includes.helper import *
 
 # Configuration

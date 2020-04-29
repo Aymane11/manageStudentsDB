@@ -1,6 +1,8 @@
+# Import database
 from includes.database import *
 
 
+# Tables
 tables = {
 
     # Table Auteur
@@ -179,15 +181,19 @@ tables = {
 			'dateInsc': 	['TEXT', 'NOT NULL']
         }
     },
-
 }
 
+# Db cursor
 cur = db.cursor()
 
 
+# Query
 QUERY = ""
+
+# Queries
 queries = []
 
+# 
 for nameTable, table in tables.items():
     QUERY += "CREATE TABLE IF NOT EXISTS " + nameTable + " ("
     for attribute in table['attributes']:
@@ -206,6 +212,7 @@ for nameTable, table in tables.items():
     QUERY += ")"
     queries.append(QUERY)
     QUERY = ""
+
 
 for query in queries:
     # print(query)
