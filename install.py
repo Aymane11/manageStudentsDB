@@ -1,4 +1,4 @@
-from includes.DB import *
+from includes.database import *
 
 
 tables = {
@@ -44,8 +44,6 @@ tables = {
             'Nauteur': 'Auteur'
         },
         'primaryKeys': [
-			'Nlivre',
-			'Nauteur'
         ],
         'attributes': {
             'Nlivre': 	['INTEGER', 'NOT NULL'],
@@ -145,8 +143,6 @@ tables = {
 			'num_cours' : 	'Cours'
         },
         'primaryKeys': [
-			'num_etu',
-			'num_cours'
 		],	
         'attributes': {
             'num_etu': 		['INTEGER', 'NOT NULL'],
@@ -176,8 +172,6 @@ tables = {
 			'num_etu':		'Etudiant',
 			'num_cours' : 	'Cours'        },
         'primaryKeys': [
-			'num_etu',
-			'num_cours'
 		],
         'attributes': {
             'num_etu': 		['INTEGER', 'NOT NULL'],

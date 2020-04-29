@@ -1,10 +1,10 @@
 import sqlite3 as sql
 from sqlite3 import Error
-from config import *
+from includes.helper import *
 
 # Configuration
 config = {
-    "database": config.DATABASE_PATH + "/database.sqlite",
+    "database": DATABASE_PATH + "/database.sqlite",
 }
 
 # Try to connect to our sqlite db :)
