@@ -1,4 +1,4 @@
-from inc.DB import *
+from includes.DB import *
 
 
 tables = {
@@ -214,6 +214,6 @@ for nameTable, table in tables.items():
     QUERY = ""
 
 for query in queries:
-    print(query)
+    # print(query)
     cur.execute(query)
 db.close()
