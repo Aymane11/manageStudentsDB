@@ -157,7 +157,7 @@ tables = {
 	# Table Charge
     "Charge": {
         'foreignKeys': {
-			'num_ens' : 'Enseignant'
+			'num_ens' : 'Enseignant',
             'num_cours': 'Cours',
         },
         'primaryKeys': [
@@ -208,13 +208,13 @@ for nameTable, table in tables.items():
     for fkName in table['foreignKeys']:
         QUERY += "FOREIGN KEY(" + fkName + ") REFERENCES " + \
             table['foreignKeys'][fkName] + "(" + fkName + "),"
-    # here we have to delete the last (,) in out query :)
+    # Removing the last comma in query
     QUERY = QUERY[:-1]
     QUERY += ")"
     queries.append(QUERY)
     QUERY = ""
 
-# 
+# Executing queries
 for query in queries:
     cur.execute(query)
 
