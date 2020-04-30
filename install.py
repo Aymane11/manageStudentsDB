@@ -91,7 +91,8 @@ tables = {
             'numClasse': 		['INTEGER', 'NOT NULL']
         }
     },
-	# Table Classe
+	
+    # Table Classe
     "Classe": {
         'foreignKeys': {
             
@@ -157,9 +158,9 @@ tables = {
     "Charge": {
         'foreignKeys': {
 			'num_ens' : 'Enseignant'
+            'num_cours': 'Cours',
         },
         'primaryKeys': [
-            'num_cours'
         ],
         'attributes': {
             'num_cours': 	['INTEGER', 'NOT NULL'],
@@ -213,8 +214,8 @@ for nameTable, table in tables.items():
     queries.append(QUERY)
     QUERY = ""
 
-
+# 
 for query in queries:
-    # print(query)
     cur.execute(query)
+
 db.close()
