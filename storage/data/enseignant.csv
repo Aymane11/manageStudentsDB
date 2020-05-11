@@ -1,16 +1,7 @@
-"num_ens","nomP","prenomP","specialite","departement"
-"1225","Cobb","Anita","Dessin industriel","Industriel Logistique"
-"1876","Eloise","Munoz","Securite","Reseaux Telecom"
-"2033","Henrietta","Nelson","Developpement Web","Informatique"
-"2421","Alexandra","Larson","Developpement Web","Informatique"
-"2932","Celia","Perkins","Systemes Embarques","Electrique"
-"3546","Marion","Holloway","IoT","Electrique"
-"3619","Horace","Obrien","Systemes Embarques","Electrique"
-"3764","Ginger","Hampton","Intelligence Artificielle","Informatique"
-"3798","Winifred","Simon","Java","Informatique"
-"3816","Hubert","Moody","Reseaux","Reseaux Telecom"
-"3893","Antonia","Francis","Automatique","Industriel Logistique"
-"4320","Gregg","Barnes","Mathematiques","Informatique"
-"4714","Tanya","Ball","Microprocesseurs","Electrique"
-"4875","Leticia","Baldwin","Securite","Reseaux Telecom"
-"4934","Ramona","Rice","Logistique","Industriel Logistique"
+1,Cobb,Anita,Dessin industriel,Industriel Logistique
+2,Eloise,Munoz,Securite,Reseaux Telecom
+3,Henrietta,Nelson,Developpement Web,Informatique
+4,Alexandra,Larson,Developpement Web,Informatique
+5,Celia,Perkins,Systemes Embarques,Electrique
+6,Marion,Holloway,IoT,Electrique
+7,Horace,Obrien,Systemes Embarques,Electrique

@@ -1,5 +1,6 @@
 # Import database
 from includes.database import *
+import csv
 
 
 # Tables
@@ -17,7 +18,7 @@ tables = {
             'NAuteur': 		['INTEGER'],
             'nomA': 		['TEXT', 'NOT NULL'],
             'prenomA': 		['TEXT', 'NOT NULL'],
-            'nationaliteA': ['TEXT', 'NOT NULL']
+            'nationalite': ['TEXT', 'NOT NULL']
         }
     },
 
@@ -53,22 +54,17 @@ tables = {
         }
     },
 
-    # Table Pret
-    "Pret": {
+    # Table Classe
+    "Classe": {
         'foreignKeys': {
-            'num_etu': 'Etudiant',
-            'Nlivre': 'Livre'
+            
         },
         'primaryKeys': [
-            'Npret'
+            'numClasse'
         ],
         'attributes': {
-            'Npret': 			['INTEGER', 'NOT NULL'],
-            'num_etu': 			['INTEGER', 'NOT NULL'],
-            'Nlivre': 			['INTEGER', 'NOT NULL'],
-            'datePret': 		['TEXT', 'NOT NULL'],
-            'dateRetour': 		['TEXT'],
-            'DateRetourPrevue': ['TEXT']
+            'numClasse': ['INTEGER', 'NOT NULL'],
+            'nomClasse': ['TEXT', 'NOT NULL'],
         }
     },
 
@@ -91,38 +87,41 @@ tables = {
             'numClasse': 		['INTEGER', 'NOT NULL']
         }
     },
-	
-    # Table Classe
-    "Classe": {
-        'foreignKeys': {
-            
-        },
-        'primaryKeys': [
-            'numClasse'
-        ],
-        'attributes': {
-            'numClasse': ['INTEGER', 'NOT NULL'],
-            'nomClasse': ['TEXT', 'NOT NULL'],
-        }
-    },
 
-	# Table Cours
-    "Cours": {
+    # Table Inscrit
+    "Inscrit": {
         'foreignKeys': {
-			'num_ens' : 'Enseignant'
-        },
+			'num_etu':		'Etudiant',
+			'num_cours' : 	'Cours'        },
         'primaryKeys': [
-            'num_cours'
-        ],
+		],
         'attributes': {
+            'num_etu': 		['INTEGER', 'NOT NULL'],
             'num_cours': 	['INTEGER', 'NOT NULL'],
-            'nomC': 		['TEXT', 'NOT NULL'],
-			'nb_heures': 	['INTEGER', 'NOT NULL'],
-			'num_ens':		['INTEGER', 'NOT NULL']
+			'dateInsc': 	['TEXT', 'NOT NULL']
         }
     },
 
-	# Table Enseignant
+    # Table Pret
+    "Pret": {
+        'foreignKeys': {
+            'num_etu': 'Etudiant',
+            'Nlivre': 'Livre'
+        },
+        'primaryKeys': [
+            'Npret'
+        ],
+        'attributes': {
+            'Npret': 			['INTEGER', 'NOT NULL'],
+            'num_etu': 			['INTEGER', 'NOT NULL'],
+            'Nlivre': 			['INTEGER', 'NOT NULL'],
+            'datePret': 		['TEXT', 'NOT NULL'],
+            'dateRetour': 		['TEXT'],
+            'DateRetourPrevue': ['TEXT']
+        }
+    },
+
+    # Table Enseignant
     "Enseignant": {
         'foreignKeys': {
             
@@ -136,6 +135,22 @@ tables = {
 			'prenomP': 		['TEXT', 'NOT NULL'],
 			'specialite': 	['TEXT', 'NOT NULL'],
 			'departement': 	['TEXT', 'NOT NULL']
+        }
+    },
+	
+	# Table Cours
+    "Cours": {
+        'foreignKeys': {
+			'num_ens' : 'Enseignant'
+        },
+        'primaryKeys': [
+            'num_cours'
+        ],
+        'attributes': {
+            'num_cours': 	['INTEGER', 'NOT NULL'],
+            'nomC': 		['TEXT', 'NOT NULL'],
+			'nb_heures': 	['INTEGER', 'NOT NULL'],
+			'num_ens':		['INTEGER', 'NOT NULL']
         }
     },
 
@@ -169,19 +184,6 @@ tables = {
         }
     },
 
-	# Table Inscrit
-    "Inscrit": {
-        'foreignKeys': {
-			'num_etu':		'Etudiant',
-			'num_cours' : 	'Cours'        },
-        'primaryKeys': [
-		],
-        'attributes': {
-            'num_etu': 		['INTEGER', 'NOT NULL'],
-            'num_cours': 	['INTEGER', 'NOT NULL'],
-			'dateInsc': 	['TEXT', 'NOT NULL']
-        }
-    },
 }
 
 # Db cursor
@@ -194,7 +196,6 @@ QUERY = ""
 # Queries
 queries = []
 
-# 
 for nameTable, table in tables.items():
     QUERY += "CREATE TABLE IF NOT EXISTS " + nameTable + " ("
     for attribute in table['attributes']:
@@ -213,9 +214,28 @@ for nameTable, table in tables.items():
     QUERY += ")"
     queries.append(QUERY)
     QUERY = ""
-
 # Executing queries
 for query in queries:
     cur.execute(query)
+
+db.commit()
+
+for nameTable, table in tables.items():
+    with open(DATA_PATH + '/'+nameTable+'.csv') as csv_file:
+        csv_reader = csv.reader(csv_file, delimiter=',')
+        for row in csv_reader:
+            questionMarks = ""
+            sql = "INSERT INTO "+nameTable+'('
+            for attribute in table['attributes']:
+            	questionMarks += "?,"
+            	sql += attribute+","
+            sql = sql[:-1]
+            questionMarks = questionMarks[:-1]
+            sql += ") VALUES (" + questionMarks + ")"
+            cur.execute(sql, row)
+    db.commit()
+    
+db.commit()
+
 
 db.close()
