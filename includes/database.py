@@ -28,10 +28,10 @@ tables = {
             'NAuteur'
         ],
         'attributes': {
-            'NAuteur': 		['INTEGER'],
-            'nomA': 		['VARCHAR(50)', 'NOT NULL'],
-            'prenomA': 		['VARCHAR(50)', 'NOT NULL'],
-            'nationalite': ['VARCHAR(50)', 'NOT NULL']
+            'NAuteur': 	        ['INTEGER'],
+            'nomA': 	        ['VARCHAR(50)', 'NOT NULL'],
+            'prenomA': 	        ['VARCHAR(50)', 'NOT NULL'],
+            'nationalite':      ['VARCHAR(50)', 'NOT NULL']
         }
     },
 
@@ -44,26 +44,26 @@ tables = {
             'Nlivre'
         ],
         'attributes': {
-            'Nlivre': 	['INTEGER'],
-            'num_ISBN': ['VARCHAR(17)', 'NOT NULL'],
-            'titre': 	['VARCHAR(50)', 'NOT NULL'],
-            'nbPages': 	['INTEGER', 'NOT NULL'],
-            'anneeS': 	['VARCHAR(4)', 'NOT NULL'],
-            'prix': 	['REAL', 'NOT NULL']
+            'Nlivre': 	        ['INTEGER'],
+            'num_ISBN':         ['VARCHAR(17)', 'NOT NULL'],
+            'titre': 	        ['VARCHAR(50)', 'NOT NULL'],
+            'nbPages': 	        ['INTEGER', 'NOT NULL'],
+            'anneeS': 	        ['DATE', 'NOT NULL'],
+            'prix': 	        ['REAL', 'NOT NULL']
         }
     },
 
     # Table Possede
     "Possede": {
         'foreignKeys': {
-            'Nlivre': 'Livre',
-            'Nauteur': 'Auteur'
+            'Nlivre':           'Livre',
+            'Nauteur':          'Auteur'
         },
         'primaryKeys': [
         ],
         'attributes': {
-            'Nlivre': 	['INTEGER', 'NOT NULL'],
-            'Nauteur': 	['INTEGER', 'NOT NULL']
+            'Nlivre': 	        ['INTEGER', 'NOT NULL'],
+            'Nauteur': 	        ['INTEGER', 'NOT NULL']
         }
     },
 
@@ -76,15 +76,15 @@ tables = {
             'numClasse'
         ],
         'attributes': {
-            'numClasse': ['INTEGER', 'NOT NULL'],
-            'nomClasse': ['VARCHAR(50)', 'NOT NULL'],
+            'numClasse':        ['INTEGER', 'NOT NULL'],
+            'nomClasse':        ['VARCHAR(50)', 'NOT NULL'],
         }
     },
 
     # Table Etudiant
     "Etudiant": {
         'foreignKeys': {
-            'numClasse': 'Classe'
+            'numClasse':        'Classe'
         },
         'primaryKeys': [
             'num_etu'
@@ -93,10 +93,10 @@ tables = {
             'num_etu': 			['INTEGER', 'NOT NULL'],
             'nomE': 			['VARCHAR(50)', 'NOT NULL'],
             'prenomE': 			['VARCHAR(50)', 'NOT NULL'],
-            'date_naissance': 	['VARCHAR(50)', 'NOT NULL'],
+            'date_naissance': 	['DATE', 'NOT NULL'],
             'ville': 			['VARCHAR(50)', 'NOT NULL'],
-            'dateInscripBU': 	['VARCHAR(50)', 'NOT NULL'],
-            'dateAbs': 			['VARCHAR(50)'],
+            'dateInscripBU': 	['DATE'],
+            'dateAbs': 			['DATE'],
             'numClasse': 		['INTEGER', 'NOT NULL']
         }
     },
@@ -104,22 +104,22 @@ tables = {
     # Table Inscrit
     "Inscrit": {
         'foreignKeys': {
-            'num_etu':		'Etudiant',
-                        'num_cours': 	'Cours'},
+            'num_etu':		    'Etudiant',
+            'num_cours': 	    'Cours'},
         'primaryKeys': [
         ],
         'attributes': {
-            'num_etu': 		['INTEGER', 'NOT NULL'],
-            'num_cours': 	['INTEGER', 'NOT NULL'],
-            'dateInsc': 	['VARCHAR(50)', 'NOT NULL']
+            'num_etu': 		    ['INTEGER', 'NOT NULL'],
+            'num_cours': 	    ['INTEGER', 'NOT NULL'],
+            'dateInsc': 	    ['DATE', 'NOT NULL']
         }
     },
 
     # Table Pret
     "Pret": {
         'foreignKeys': {
-            'num_etu': 'Etudiant',
-            'Nlivre': 'Livre'
+            'num_etu':          'Etudiant',
+            'Nlivre':           'Livre'
         },
         'primaryKeys': [
             'Npret'
@@ -128,9 +128,9 @@ tables = {
             'Npret': 			['INTEGER', 'NOT NULL'],
             'num_etu': 			['INTEGER', 'NOT NULL'],
             'Nlivre': 			['INTEGER', 'NOT NULL'],
-            'datePret': 		['VARCHAR(50)', 'NOT NULL'],
-            'dateRetour': 		['VARCHAR(50)'],
-            'DateRetourPrevue': ['VARCHAR(50)']
+            'datePret': 		['DATE', 'NOT NULL'],
+            'dateRetour': 		['DATE'],
+            'DateRetourPrevue': ['DATE']
         }
     },
 
@@ -143,57 +143,57 @@ tables = {
             'num_ens'
         ],
         'attributes': {
-            'num_ens': 		['INTEGER', 'NOT NULL'],
-            'nomP': 		['VARCHAR(50)', 'NOT NULL'],
-            'prenomP': 		['VARCHAR(50)', 'NOT NULL'],
-            'specialite': 	['VARCHAR(50)', 'NOT NULL'],
-            'departement': 	['VARCHAR(50)', 'NOT NULL']
+            'num_ens': 		    ['INTEGER', 'NOT NULL'],
+            'nomP': 		    ['VARCHAR(50)', 'NOT NULL'],
+            'prenomP': 		    ['VARCHAR(50)', 'NOT NULL'],
+            'specialite': 	    ['VARCHAR(50)', 'NOT NULL'],
+            'departement': 	    ['VARCHAR(50)', 'NOT NULL']
         }
     },
 
     # Table Cours
     "Cours": {
         'foreignKeys': {
-            'num_ens': 'Enseignant'
+            'num_ens':          'Enseignant'
         },
         'primaryKeys': [
             'num_cours'
         ],
         'attributes': {
-            'num_cours': 	['INTEGER', 'NOT NULL'],
-            'nomC': 		['VARCHAR(50)', 'NOT NULL'],
-            'nb_heures': 	['INTEGER', 'NOT NULL'],
-            'num_ens':		['INTEGER', 'NOT NULL']
+            'num_cours': 	    ['INTEGER', 'NOT NULL'],
+            'nomC': 		    ['VARCHAR(50)', 'NOT NULL'],
+            'nb_heures': 	    ['INTEGER', 'NOT NULL'],
+            'num_ens':		    ['INTEGER', 'NOT NULL']
         }
     },
 
     # Table Resultat
     "Resultat": {
         'foreignKeys': {
-            'num_etu':		'Etudiant',
-                        'num_cours': 	'Cours'
+            'num_etu':		    'Etudiant',
+            'num_cours': 	    'Cours'
         },
         'primaryKeys': [
         ],
         'attributes': {
-            'num_etu': 		['INTEGER', 'NOT NULL'],
-            'num_cours': 	['INTEGER', 'NOT NULL'],
-            'note': 		['REAL', 'NOT NULL']
+            'num_etu': 		    ['INTEGER', 'NOT NULL'],
+            'num_cours': 	    ['INTEGER', 'NOT NULL'],
+            'note': 		    ['REAL', 'NOT NULL']
         }
     },
 
     # Table Charge
     "Charge": {
         'foreignKeys': {
-            'num_ens': 'Enseignant',
-            'num_cours': 'Cours',
+            'num_ens':          'Enseignant',
+            'num_cours':        'Cours',
         },
         'primaryKeys': [
         ],
         'attributes': {
-            'num_cours': 	['INTEGER', 'NOT NULL'],
-            'num_ens': 		['INTEGER', 'NOT NULL'],
-            'nbH': 			['INTEGER', 'NOT NULL']
+            'num_cours': 	    ['INTEGER', 'NOT NULL'],
+            'num_ens': 		    ['INTEGER', 'NOT NULL'],
+            'nbH': 			    ['INTEGER', 'NOT NULL']
         }
     },
 
