@@ -157,7 +157,7 @@ cur.execute("CREATE TABLE IF NOT EXISTS new_Livre (\
             anneeS VARCHAR(4) NOT NULL ,\
             prix REAL NOT NULL, \
             Nauteur INTEGER DEFAULT NULL , \
-            FOREIGN KEY(Nauteur) REFERENCES Auteur(NAuteur));")
+            FOREIGN KEY(Nauteur) REFERENCES Auteur(Nauteur));")
 cur.execute("INSERT INTO new_Livre SELECT * FROM Livre;")
 cur.execute("PRAGMA foreign_keys = OFF;")
 cur.execute("DROP TABLE Livre;")

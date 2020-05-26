@@ -25,10 +25,10 @@ tables = {
 
         },
         'primaryKeys': [
-            'NAuteur'
+            'Nauteur'
         ],
         'attributes': {
-            'NAuteur': 	        ['INTEGER'],
+            'Nauteur': 	        ['INTEGER'],
             'nomA': 	        ['VARCHAR(50)', 'NOT NULL'],
             'prenomA': 	        ['VARCHAR(50)', 'NOT NULL'],
             'nationalite':      ['VARCHAR(50)', 'NOT NULL']
@@ -105,7 +105,8 @@ tables = {
     "Inscrit": {
         'foreignKeys': {
             'num_etu':		    'Etudiant',
-            'num_cours': 	    'Cours'},
+            'num_cours': 	    'Cours'
+        },
         'primaryKeys': [
         ],
         'attributes': {

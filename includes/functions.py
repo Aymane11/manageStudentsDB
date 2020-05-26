@@ -1,4 +1,5 @@
 from includes.database import *
+import matplotlib.pyplot as plt
 
 def getTables(tables):
     return list(tables.keys())
@@ -87,14 +88,6 @@ def resuEtu(num_etu):
 '''
 def resultEchec():
 	cur = db.cursor()
-	'''
-	cur.execute("SELECT nomE,prenomE,note,AVG(note),nomC FROM Etudiant E,Inscrit I,Resultat R,Cours C \
-				WHERE E.num_etu=I.num_etu AND \
-				I.num_cours=C.num_cours AND \
-				R.num_etu=E.num_etu AND \
-				R.num_cours=C.num_cours AND \
-				note<10 GROUP BY nomC;")
-	'''
 	cur.execute("SELECT nomC,nomE,prenomE,note FROM Etudiant E,Resultat R,Cours C \
 				WHERE R.num_etu=E.num_etu AND \
 				R.num_cours=C.num_cours AND \
@@ -219,3 +212,64 @@ def supprimerCours(num_cours):
 	for query in queries:
 		cur.execute(query, [num_cours])
 		db.commit()
+
+'''
+	* getNums - Numero des etudiants ayant un reusltat
+	* @param none
+	* @return list(num_etu)
+'''
+def getNums():
+	cur=db.cursor()
+	cur.execute("SELECT DISTINCT num_etu from Resultat;")
+	myList = cur.fetchall()
+	myList=[tup[0] for tup in myList]
+	return myList
+
+'''
+	* avgRes - Moyenne generale de l etudiant
+	* @param num_etu
+	* @return list(nom,prenom,moyenne)
+'''
+def avgRes(num_etu):
+	cur=db.cursor()
+	cur.execute("SELECT nomE,prenomE,AVG(note) \
+				from Resultat R,Etudiant E \
+				WHERE R.num_etu=E.num_etu \
+				AND R.num_etu="+str(num_etu)+';')
+	myList = cur.fetchall()
+	return myList
+
+'''
+	* plotting - graphe (pie) des moyennes generales
+	* @param none
+	* @return none
+'''
+notes=[]
+def plotting_pie():
+    for NEtud in getNums():
+        #print(avgRes(NEtd))
+        notes.append(avgRes(NEtud)[0][2])
+    ordered_notes=[]
+    ordered_notes.append(sum(1 for note in notes if note<=8))
+    ordered_notes.append(sum(1 for note in notes if note<=10 and note>8))
+    ordered_notes.append(sum(1 for note in notes if note<=12 and note>10))
+    ordered_notes.append(sum(1 for note in notes if note<=14 and note>12))
+    ordered_notes.append(sum(1 for note in notes if note<=20 and note>14))
+    fig1, ax1 = plt.subplots()
+    labels=['note<8','8<note<=10','10<note<=12','12<note<=14','14<note']
+    ax1.pie(ordered_notes, labels=labels, autopct='%1.2f%%', startangle=90)
+    ax1.axis('equal')
+    plt.show()
+
+'''
+	* plotting - graphe (histogram) des moyennes generales
+	* @param none
+	* @return none
+'''
+def plotting_hist():
+	plt.hist(notes, bins = len(notes),rwidth=0.5)
+	plt.xlabel('Moyenne générale')
+	plt.ylabel("Nombre d'etudiants")
+	plt.title('Histogramme des moyennes générales')
+	plt.xticks(range(0, 21,1))
+	plt.show()
