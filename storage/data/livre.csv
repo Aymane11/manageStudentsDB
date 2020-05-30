@@ -1,17 +1,70 @@
-1,978-3-319-55605-5,Guide to Computer Network Security,307,2017,291.2
-2,978-3-319-57251-2,Introduction to Law,473,2017,61.7
-3,978-3-319-25674-0,Advanced Quantum Mechanics,483,2016,482.95
-4,978-1-4614-8686-2,Bayesian Essentials with R,120,2014,474.67
-5,978-3-642-20143-1,"Robotics, Vision and Control",132,2011,595.34
-6,978-1-4614-4261-5,Applied Chemistry,374,2013,444.36
-7,978-0-387-44897-8,Advanced Organic Chemistry,378,2007,185.18
-8,978-3-319-14453-5,International Humanitarian Action,296,2018,301.84
-9,978-3-319-48846-2,Breast Cancer,410,2017,255.66
-10,978-3-319-49848-5,"Travel Marketing, Tourism Economics and the Airline Product",204,2018,224.74
-11,978-3-319-58714-1,Electronic Commerce 2018,375,2018,584.85
-12,978-3-319-64785-2,Disability and Vocational Rehabilitation in Rural Settings,162,2018,157.93
-13,978-3-319-65450-8,Teaching Medicine and Medical Ethics Using Popular Culture,119,2017,553.5
-14,978-981-10-5217-0,Market Research,359,2018,324.56
-15,978-1-4939-6674-5,Scanning Electron Microscopy and X-Ray Microanalysis,359,2018,503.11
-16,978-3-319-61157-0,ArcGIS for Environmental and Water Issues,316,2018,226.32
-17,978-3-319-66630-3,Physics from Symmetry,299,2018,538.97
+1,784-3-21-446702-5,Fundamentals of Wavelets,228,1966,258.19
+3,306-7-40-211145-6,God Created the Integers,197,1988,164.55
+2,834-1-44-217869-1,Data Smart,235,1993,190.47
+5,737-4-32-918661-9,Orientalism,197,2000,184.07
+4,969-0-25-462111-3,Superfreakonomics,179,1954,287.4
+7,997-4-20-931438-4,Integration of the Indian States,217,1987,185.27
+6,351-5-70-720579-4,The Nature of Statistical Learning Theory,230,1972,68.86
+9,397-6-60-528186-8,Image Processing & Mathematical Morphology,241,1983,270.63
+8,196-5-15-161532-4,The Drunkard's Walk,197,1988,281.11
+11,423-2-29-907654-5,Data Scientists at Work,230,2010,222.17
+10,674-2-64-549163-0,How to Think Like Sherlock Holmes,240,1996,216.46
+13,382-5-10-355545-6,Birth of a Theorem,234,1973,133.28
+12,326-5-88-211881-9,Slaughterhouse Five,198,1952,150.8
+15,433-4-12-859509-9,The Age of Wrath,238,1998,239.39
+14,678-7-54-459365-3,Structure & Interpretation of Computer Programs,240,1970,186.45
+16,646-3-41-526595-6,The Trial,198,1980,97.16
+17,755-1-71-130546-1,Statistical Decision Theory',236,1992,255.65
+18,636-6-14-519045-1,Data Mining Handbook,242,1993,102.96
+19,949-1-99-738084-2,The New Machiavelli,180,1966,160.23
+20,998-8-34-637979-3,Physics & Philosophy,197,2006,249.64
+21,620-5-59-669816-7,Making Software,232,1963,193.81
+22,628-7-24-979259-5,Vol I Analysis,248,1988,163.44
+23,351-7-94-564382-5,Machine Learning for Hackers,233,2014,236.9
+24,618-9-67-703062-3,The Signal and the Noise,233,1950,117.29
+25,948-4-66-923244-0,Python for Data Analysis,233,2016,196.22
+26,355-9-33-844826-9,Introduction to Algorithms,234,2004,185.27
+27,994-1-81-911961-8,The Beautiful and the Damned,198,2020,198.69
+28,174-8-44-869486-5,The Outsider,198,2013,173.95
+29,201-1-25-264467-1,The - Vol I Complete Sherlock Holmes,176,1951,93.77
+30,956-5-17-323418-6,The - Vol II Complete Sherlock Holmes,176,2016,230.14
+31,883-1-39-127571-6,The Wealth of Nations,175,1976,290.1
+32,166-8-76-861492-4,The Pillars of the Earth,176,2019,239
+33,859-9-30-420032-2,Mein Kampf,212,1966,91.6
+34,136-8-68-680095-2,The Tao of Physics,179,2007,127.6
+35,323-0-86-718443-5,Surely You're Joking Mr Feynman,198,1991,249.8
+36,876-6-56-207951-4,A Farewell to Arms,179,1965,180.4
+37,932-1-35-687329-3,The Veteran,177,1967,174.6
+38,431-3-90-814965-2,False Impressions,177,2003,146.6
+39,582-6-23-694008-7,The Last Lecture,197,1965,194.1
+40,164-9-55-470568-2,Return of the Primitive,202,2005,129.8
+41,334-5-46-146189-2,Jurassic Park,174,1983,66.5
+42,845-9-24-747841-7,A Russian Journal,196,1957,237.8
+43,571-3-40-563284-5,Tales of Mystery and Imagination,172,2006,212.7
+44,688-4-42-947337-0,Freakonomics,197,1960,229.3
+45,911-7-76-950269-9,The Hidden Connections,197,1989,216
+46,125-0-97-459374-0,The Story of Philosophy,170,1958,67
+47,366-1-85-602329-6,Asami Asami,205,1999,126.7
+48,562-7-49-281159-9,Journal of a Novel,196,2016,278.2
+49,924-9-24-755348-6,Once There Was a War,196,1983,180.9
+50,701-8-42-856930-5,The Moon is Down,196,1955,104.6
+51,384-3-82-949901-9,The Brethren,174,1957,237.8
+52,445-5-18-303728-5,In a Free State,196,1950,109.7
+53,489-2-85-249176-4,Catch 22,178,1999,235.5
+54,467-9-91-930507-8,The Complete Mastermind,178,1994,262.7
+55,443-8-60-516497-7,Dylan on Dylan,197,1993,259.6
+56,983-1-89-221065-4,Soft Computing & Intelligent Systems,242,1990,64.1
+57,399-3-94-784329-7,Textbook of Economic Theory,242,2010,68.3
+58,181-7-70-312310-0,Econometric Analysis,242,1957,97.3
+59,437-3-98-436090-4,Learning OpenCV,232,1997,218.5
+60,320-9-30-177477-3,Data Structures Using C and C++,235,2004,244.9
+61,914-0-63-231199-7,A Modern Approach Computer Vision,255,1992,257.2
+62,675-6-96-687967-4,Principles of Communication Systems,240,1962,292.4
+63,259-1-12-882847-1,Let Us C,213,1955,106.1
+64,274-4-49-638026-8,The Amulet of Samarkand,179,2010,187.6
+65,818-0-76-465794-9,Crime and Punishment,180,1959,72.3
+66,862-4-88-440044-9,Angels & Demons,178,1964,262
+67,725-0-93-327596-4,The Argumentative Indian,209,1950,73.7
+68,584-6-56-694734-4,Sea of Poppies,197,1952,102.7
+69,473-7-43-207465-4,The Idea of Justice,212,1956,270.9
+70,950-8-61-153340-9,The great war of civilisation,312,2015,281.1

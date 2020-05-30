@@ -49,6 +49,7 @@ for nameTable in getTables(tables):
             sql = sql[:-1]
             questionMarks = questionMarks[:-1]
             sql += ") VALUES (" + questionMarks + ")"
+            row=[val if val!='' else None for val in row ]
             cur.execute(sql, row)
     db.commit()
     
@@ -78,7 +79,7 @@ db.commit()
 cur.execute("ALTER TABLE etudiant ADD COLUMN email VARCHAR(100);")
 db.commit()
 
-#3-Ajouter la colonne adresse à la table adresse.
+#3-Ajouter la colonne adresse à la table etudiant.
 cur.execute("ALTER TABLE etudiant ADD COLUMN adresse VARCHAR(100);")
 db.commit()
 
