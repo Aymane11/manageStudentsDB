@@ -1,6 +1,7 @@
 from includes.database import *
 from includes.functions import *
 
+"""
 print(desc["Q1"])
 print(insBU("Stout"))
 
@@ -52,7 +53,6 @@ print(desc["Q9"])
 for classe in resultTot():
     print(classe)
 
-"""
 print(''.join("--" for _ in range(15)))
 print(desc["Q10"])
 num_cours, nomC= input("num_cours et nomC : ").split()

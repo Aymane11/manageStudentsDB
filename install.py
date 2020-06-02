@@ -63,7 +63,7 @@ cur.execute("CREATE TABLE new_Etudiant ( \
     nomE VARCHAR(60) NOT NULL , \
     prenomE VARCHAR(50) NOT NULL , \
     date_naissance DATE NOT NULL , \
-    ville VARCHAR(50) NOT NULL , \
+    nationalite VARCHAR(50) NOT NULL , \
     dateInscripBU DATE NOT NULL , \
     dateAbs DATE , \
     numClasse INTEGER NOT NULL , \

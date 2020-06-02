@@ -1,6 +1,7 @@
 from includes.database import *
 import matplotlib.pyplot as plt
-from collections import Counter 
+from collections import Counter
+
 desc = {
     "Q1"  : "\nQ1:\n	* insBU - Date inscription de l etudiant dans la bibliotheque\n	* @param nomE (string)\n	* @return dateInscripBU (string)\n",
     "Q2"  : "\nQ2:\n	* insCour - La liste des etudiants inscrits et date d'inscription dans cours\n	* @param num_cours (integer)\n	* @return (list)\n",
@@ -299,19 +300,20 @@ def avgRes(num_etu):
 '''
 notes = []
 def plotting_pie():
-    for NEtud in getNums():
-        notes.append(avgRes(NEtud)[0][2])
-    count_notes = []
-    count_notes.append(sum(1 for note in notes if note <= 8))
-    count_notes.append(sum(1 for note in notes if note <= 10 and note > 8))
-    count_notes.append(sum(1 for note in notes if note <= 12 and note > 10))
-    count_notes.append(sum(1 for note in notes if note <= 14 and note > 12))
-    count_notes.append(sum(1 for note in notes if note <= 20 and note > 14))
-    fig1, ax1 = plt.subplots()
-    labels = ['note<8', '8<note<=10', '10<note<=12', '12<note<=14', '14<note']
-    ax1.pie(count_notes, labels=labels, autopct='%1.2f%%', startangle=90)
-    ax1.axis('equal')
-    plt.show()
+	for NEtud in getNums():
+	    notes.append(avgRes(NEtud)[0][2])
+	count_notes = []
+	count_notes.append(sum(1 for note in notes if note <= 8))
+	count_notes.append(sum(1 for note in notes if note <= 10 and note > 8))
+	count_notes.append(sum(1 for note in notes if note <= 12 and note > 10))
+	count_notes.append(sum(1 for note in notes if note <= 14 and note > 12))
+	count_notes.append(sum(1 for note in notes if note <= 20 and note > 14))
+	fig1, ax1 = plt.subplots()
+	labels = ['note<8', '8<note<=10', '10<note<=12', '12<note<=14', '14<note']
+	ax1.pie(count_notes, labels=labels, autopct='%1.2f%%', startangle=90)
+	ax1.axis('equal')
+	plt.title("Moyenne générale par catégorie de notes")
+	plt.show()
 
 
 '''
