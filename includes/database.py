@@ -94,7 +94,7 @@ tables = {
             'nomE': 			['VARCHAR(50)', 'NOT NULL'],
             'prenomE': 			['VARCHAR(50)', 'NOT NULL'],
             'date_naissance': 	['DATE', 'NOT NULL'],
-            'ville': 			['VARCHAR(50)', 'NOT NULL'],
+            'nationalite': 		['VARCHAR(50)', 'NOT NULL'],
             'dateInscripBU': 	['DATE'],
             'dateAbs': 			['DATE'],
             'numClasse': 		['INTEGER', 'NOT NULL']
