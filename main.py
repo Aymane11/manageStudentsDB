@@ -3,7 +3,7 @@ from includes.functions import *
 
 print(desc["Q1"])
 nom=input("Nom de l'etudiant :")
-print("Date d'inscription à la bibliotheque de l'etudiant %s est %",nom,insBU(nom))
+print(f"Date d'inscription à la bibliotheque de l'etudiant {nom} est {insBU(nom)}")
 
 
 print(''.join("--" for _ in range(15)))
