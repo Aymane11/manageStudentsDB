@@ -1,20 +1,22 @@
 from includes.database import *
 from includes.functions import *
 
-"""
 print(desc["Q1"])
-print(insBU("Stout"))
+nom=input("Nom de l'etudiant :")
+print("Date d'inscription à la bibliotheque de l'etudiant %s est %",nom,insBU(nom))
 
 
 print(''.join("--" for _ in range(15)))
 print(desc["Q2"])
-for etudiant in insCour(3):
+num=int(input("Num de cours :"))
+for etudiant in insCour(num):
     print(etudiant)
 
 
 print(''.join("--" for _ in range(15)))
 print(desc["Q3"])
-for resultat in resuEtu(1):
+num=int(input("Num de l'etudiant :"))
+for resultat in resuEtu(num):
     print(resultat)
 
 
@@ -32,7 +34,8 @@ for etudiant in insr():
 
 print(''.join("--" for _ in range(15)))
 print(desc["Q6"])
-for pret in empLiv(22):
+num=int(input("Num du livre :"))
+for pret in empLiv(num):
     print(pret)
 
 
@@ -53,6 +56,7 @@ print(desc["Q9"])
 for classe in resultTot():
     print(classe)
 
+"""
 print(''.join("--" for _ in range(15)))
 print(desc["Q10"])
 num_cours, nomC= input("num_cours et nomC : ").split()

@@ -313,7 +313,6 @@ def plotting_pie():
 	ax1.pie(count_notes, labels=labels, autopct='%1.2f%%', startangle=90)
 	ax1.axis('equal')
 	plt.title("Moyenne générale par catégorie de notes")
-	plt.savefig("pie.eps", bbox_inches='tight')
 	plt.show()
 
 
@@ -330,5 +329,4 @@ def plotting_hist():
 	plt.ylabel("Nombre d'etudiants")
 	plt.title('Histogramme des moyennes générales')
 	plt.xticks(range(0, 21))
-	plt.savefig("hist.eps", bbox_inches='tight')
 	plt.show()
