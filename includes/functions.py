@@ -9,7 +9,7 @@ desc = {
     "Q4"  : "\nQ4:\n	* resultEchec - La liste des etudiants inscrits ayant une note<10 groupes par nom module\n	* @param none\n	* @return (list: nom, prenom, note ; la moyene classe)\n",
     "Q5"  : "\nQ5:\n	* insr - les noms des etudiants inscrits dans tous les modules\n	* @param none\n	* @return (list: nom, prenom)\n",
     "Q6"  : "\nQ6:\n	* empLiv - les Noms des etudiants avec date retour , qui ont empruntes le livre pour code Nlivre\n	* @param Nlivre (integer)\n	* @return (list: nom, prenom,datePret,dateRetour)\n",
-    "Q7"  : "\nQ7:\n	* retard - La liste des etudiants n ayant pas encore rendus au moins un livre\n	* @param none\n	* @return (list: nom, prenom,titre)\n",
+    "Q7"  : "\nQ7:\n	* retard - La liste des etudiants n ayant pas encore rendus au moins un livre\n	* @param none\n	* @return (list: nom, prenom,titre,Date retour prevue)\n",
     "Q8"  : "\nQ8:\n	* noEmp - les noms des livres empruntes par personne\n	* @param none\n	* @return (list: titre,nom, prenom)\n",
     "Q9"  : "\nQ9:\n	* ResultTot - Chaque classe le nom de la classe et la moyenne des notes obtenues par cours obtenue dans la classe.\n	* @return void\n",
     "Q10" : "\nQ10:\n	* modifierNomCours - Changer le nom d'un cours\n	* @param num_cours(int)\n	* @param nomC(int): nouveau nom de cours\n	* @return void\n",
@@ -175,7 +175,7 @@ def empLiv(Nlivre):
 '''
 	* retard - La liste des etudiants n ayant pas encore rendus au moins un livre
 	* @param none
-	* @return (list: nom, prenom,titre)
+	* @return (list: nom, prenom,titre,Date retour prevue)
 '''
 def retard():
     cur = db.cursor()
